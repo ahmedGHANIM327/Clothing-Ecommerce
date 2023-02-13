@@ -1,10 +1,11 @@
-import './App.css';
+import Categories from './components/categories-container/categories-container';
 
 const App = () => {
+
   return (
-    <div className="App">
-      Hello world
-    </div>
+    <>
+      <Categories />
+    </>
   );
 }
 
