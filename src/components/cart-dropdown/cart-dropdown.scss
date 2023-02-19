@@ -26,14 +26,41 @@
         cursor: pointer;
     }
     .cart-items {
-        height: 240px;
+        height: fit-content;
         display: flex;
         flex-direction: column;
-        overflow: scroll;
+        overflow: auto;
+        margin-top:15px;
+
+        h1
+        {
+            text-align: center;
+        }
     }
 
-    button {
-        margin-top: auto;
+
+    .cart-actions
+    {
+        bottom: 20px;
+        margin-top: 15px;
+
+        span.cart-total
+        {
+            text-align: center;
+            width: 100%;
+            display: block;
+            background-color: #eee;
+            padding: 10px 0;
+            font-size: 15px;
+            font-weight: bold;
+            border: 1px black dashed;
+            border-bottom: none;
+        }
+
+        button {
+            margin-top: auto;
+            width: 100%;
+        }
     }
 }
 
