@@ -12,6 +12,16 @@ code {
     monospace;
 }
 
+:root
+{
+  --black-color : #262626;
+  --light-grey : #f6f6f6;
+  --red-color : #C21632;
+  --blue-color : #007398;
+  --orange-color: #E6530F;
+  --green-color : #9cc41f;
+}
+
 h1,h2,h3,h4,h5,h6
 {
   font-family: "Calibre","Inter","San Francisco","SF Pro Text",-apple-system,system-ui,sans-serif;
@@ -25,7 +35,7 @@ p,a,button
 a
 {
   text-decoration: none;
-  color: black;
+  color: var(--black-color);
 }
 
 *

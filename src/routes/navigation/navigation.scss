@@ -21,6 +21,54 @@
         padding: 10px 15px;
         cursor: pointer;
         text-decoration: none;
+        color: var(--black-color);
+        font-size: 21px;
+      }
+
+      .full-page-menu
+      {
+        position: fixed;
+        width: 100%;
+        z-index: 999;
+        height: 100vh;
+        background-color: var(--black-color);
+        top: 0;
+        left: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        .nav-link
+        {
+          font-size: 18px;
+          margin: 10px 0;
+          color: #fff;
+        }
+
+        .close_nav_phone
+        {
+          border: 2px solid #fff;
+          position: absolute;
+          top: 10px;
+          left: 10px;
+          width: 35px;
+          height: 35px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          color: #fff;
+          border-radius: 50%;
+          cursor: pointer;
+        }
+      }
+
+      .menu-icon-nav
+      {
+        width: 24px;
+        height: 24px;
+        margin-left: 10px;
+        cursor: pointer;
       }
     }
   }

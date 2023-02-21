@@ -8,9 +8,9 @@
     top: 0;
     right: 0;
     padding: 20px;
-    border: 1px solid black;
-    background-color: white;
-    z-index: 5;
+    border: 1px solid var(--black-color);
+    background-color: var(--light-grey);
+    z-index: 99999;
     transition: transform 0.8s;
 
     .close_carte
@@ -25,6 +25,7 @@
         border-radius: 50%;
         cursor: pointer;
     }
+
     .cart-items {
         height: fit-content;
         display: flex;
@@ -35,6 +36,7 @@
         h1
         {
             text-align: center;
+            color: var(--black-color);
         }
     }
 

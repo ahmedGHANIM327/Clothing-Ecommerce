@@ -1,0 +1,40 @@
+.person-icon-container
+{
+    width: 45px;
+    height: 45px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+
+    img
+    {
+        width: 30px;
+        height: 31px;
+    }
+
+    .profile_cart_container
+    {
+        background-color: var(--light-grey);
+        position: absolute;
+        z-index: 99999;
+        top: 100%;
+        right: 0;
+        /* left: -100%; */
+        width: 300px;
+        max-width: 90;
+        height: fit-content;
+        padding: 20px 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border: 1px solid var(--black-color);
+
+        h2
+        {
+            font-size: 25px;
+            color: var(--black-color);
+        }
+    }
+}
