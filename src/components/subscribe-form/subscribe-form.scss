@@ -1,0 +1,31 @@
+form.subscribe_form
+{
+    display: flex;
+    //min-height: 60px;
+    height: fit-content;
+    min-width: 300px;
+    flex-wrap: wrap;
+    align-items: center;
+
+    .group
+    {
+        margin:0;
+        width: 60%;
+
+        .form-input
+        {
+            height: 60px;
+            width: 100%;
+            background-color: transparent;
+        }
+
+        label
+        {
+            display: none;
+        }
+    }
+    button
+    {
+        height: 60px;
+    }
+}

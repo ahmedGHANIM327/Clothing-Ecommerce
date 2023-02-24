@@ -3,15 +3,15 @@
   display: flex;
   flex-direction: column;
   margin-bottom: 10px;
-  background: #eee;
+  background: var(--black-color);
   align-items: center;
   position: relative;
   margin-right:10px;
-  max-height: 400px;
+  height: 390px;
   
     img {
       width: 100%;
-      height: 90%;
+      height: 85%;
       object-fit: cover;
     }
   
@@ -19,8 +19,18 @@
       width: 80%;
       opacity: 0.7;
       position: absolute;
-      top: 255px;
+      top: 50%;
       display: none;
+    }
+
+    .category
+    {
+      position: absolute;
+      background-color: var(--red-color);
+      color: var(--light-grey);
+      left: -2px;
+      top: 10px;
+      padding: 5px 12px;
     }
   
     &:hover {
@@ -36,12 +46,17 @@
   
     .footer {
       width: 100%;
-      height: 10%;
-      padding: 2px;
+      height: 15%;
+      padding: 0 10px;
       display: flex;
       align-items: center;
       justify-content: space-between;
+      color: #fff;
       font-size: 18px;
-      border: 1px dashed #000;
+
+      .price
+      {
+        font-weight: bold;
+      }
     }
   }

@@ -1,10 +1,8 @@
 .button-container {
-    min-width: 165px;
     width: auto;
-    height: 50px;
+    padding: 5px 30px;
     letter-spacing: 0.5px;
     line-height: 50px;
-    padding: 0 35px 0 35px;
     font-size: 15px;
     background-color: var(--black-color);
     color: white;
@@ -14,14 +12,16 @@
     cursor: pointer;
     display: flex;
     justify-content: center;
+    align-items: center;
+    border: 1px solid var(--black-color);
   
     &:hover {
       background-color: white;
       color: var(--black-color);
-      border: 1px solid var(--black-color);
+      /*order: 1px solid var(--black-color);*/
     }
   
-    &.google-sign-in {
+    &.red_button {
       background-color: var(--red-color);
       color: white;
   
@@ -31,7 +31,7 @@
       }
     }
   
-    &.inverted {
+    &.black_button {
       background-color: white;
       color: black;
       border: 1px solid black;
@@ -39,11 +39,11 @@
       &:hover {
         background-color: black;
         color: white;
-        border: none;
+        //border: none;
       }
     }
 
-    &.login {
+    &.blue_button {
       background-color: white;
       color: var(--blue-color);
       border: 1px solid var(--blue-color);

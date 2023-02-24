@@ -5,11 +5,12 @@ import { ReactComponent as CrwnLogo } from '../../assets/crown.svg';
 import { UserContext } from '../../context/user';
 
 import { ReactComponent as MenuIcon } from '../../assets/menu-icon.svg'
-//import { ReactComponent as CloseIcon } from '../../assets/close-icon.svg'
 
 import CartIcon from '../../components/cart-icon/cart-icon';
 import CartDropdown from '../../components/cart-dropdown/cart-dropdown';
 import PersonIcon from '../../components/person-icon/person-icon';
+
+import Footer from '../../components/footer/footer';
 
 import './navigation.scss';
 
@@ -86,6 +87,7 @@ const Navigation = () => {
             <CartDropdown show={showCart} showCartAction={setShowCart}/>
         </div>
         <Outlet />
+        <Footer />
         </Fragment>
     );
 };

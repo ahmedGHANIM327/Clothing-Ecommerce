@@ -20,21 +20,20 @@ const Categories = () => {
         },
         {
           "id": 4,
-          "title": "womens",
-          "imageUrl": "https://i.ibb.co/GCCdy8t/womens.png"
-        },
-        {
-          "id": 5,
           "title": "mens",
           "imageUrl": "https://i.ibb.co/R70vBrQ/men.png"
         }
       ];
     
       return (
-        <div className="section-container categories-container">
+        <div className="section-container categories_preview_container">
+          <h2>MyClothing Categories</h2>
+          <div className="categories-container">
           {categories.map((category) => (
             <CategoryItem key={category.id} category={category}/>
           ))}
+          </div>
+          
         </div>
       );
 }

@@ -17,7 +17,8 @@ import {
     collection , 
     writeBatch ,
     query,
-    getDocs
+    getDocs,
+    addDoc
 } from 'firebase/firestore';
 
 // Your web app's Firebase configuration
@@ -67,6 +68,37 @@ export const addCollectionAndDocuments = async (collectionKey,objectsToAdd) => {
 
 }
 
+// Add collection of products
+export const addCollectionProducts = async (collectionKey,objectsToAdd) => {
+    // Get collection of categories
+    const collectionRef = collection(db, collectionKey);
+    const batch = writeBatch(db);
+
+    objectsToAdd.forEach((object) => {
+        const docRef = doc(collectionRef,""+object.id);
+        batch.set(docRef,object);
+        //console.log(object);
+    })
+
+    await batch.commit();
+    console.log('batch done')
+}
+
+// Add collection of categories
+export const addCollectionCategories = async (collectionKey,objectsToAdd) => {
+    // Get collection of categories
+    const collectionRef = collection(db, collectionKey);
+    const batch = writeBatch(db);
+
+    objectsToAdd.forEach((object) => {
+        const docRef = doc(collectionRef,""+object.id);
+        batch.set(docRef,object);
+    })
+
+    await batch.commit();
+    console.log('batch done')
+}
+
 // Get Categories and Products from firebase
 export const getCategoriesAndDocuments = async () => {
     const collectionRef = collection(db,'categories');
@@ -82,6 +114,23 @@ export const getCategoriesAndDocuments = async () => {
     },{})
 
     return categoryMap
+}
+
+// Get Products
+export const getProducts = async () => {
+    const collectionRef = collection(db,'products');
+
+    const q = query(collectionRef);
+
+    const querySnapshot = await getDocs(q);
+
+    const productsMap = querySnapshot.docs.reduce((acc,docSnapshot) => {
+        const {id,...items} = docSnapshot.data();
+        acc[id] = {id,...items};
+        return acc
+    },{})
+
+    return productsMap
 }
 
 /* 
@@ -138,4 +187,57 @@ export const signOutUser = async () => await signOut(auth)
 
 //Observer Listener : check user authentification status
 export const onAuthStateChangedListener = (callback) => onAuthStateChanged(auth,callback)
+
+
+/************************************************************/
+/***************** Subscription *****************************/
+/************************************************************/
+export const addSubscriber = async (email) => 
+{
+  if (!email) return;
+  
+  // point to user in db in 'users' collection
+  const subDocRef = doc(db, 'subscribers', email);
+
+  // gat user from db -> collection
+  const subSapshot = await getDoc(subDocRef);
+
+  if (!subSapshot.exists()) {
+    const subscriptionDate = new Date()
+    try {
+      await setDoc(subDocRef, {
+        email,
+        subscriptionDate,
+      });
+    } catch (error) {
+      console.error('can\'t add user');
+    }
+    return true
+  }
+
+  return false
+}
+
+/**************************************/
+// Test functions 
+
+// Add new data to existing collection with random id
+export const addDocTest = async () => 
+{
+  const docRef = await addDoc(collection(db, "test_collection"), {
+    country: "Japan",
+    name:"Tokyo"
+  });
+  console.log("Document written with ID: ", docRef.id);
+}
+
+// Edit existing data in collection with random id
+export const setDocTest = async () => 
+{
+  await setDoc(collection(db, "test_collection","id_number_here"), {
+    country: "Japan",
+    name:"Tokyo"
+  });
+}
+
 

@@ -1,0 +1,26 @@
+.footer_container
+{
+    margin-top: 50px;
+    padding: 30px 0;
+    background-color: var(--light-grey);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .section-container
+    {
+        margin: 0 auto;
+        padding: 25px 0;
+
+        ul
+        {
+            list-style: none;
+            padding-inline: 0;
+            li
+            {
+                margin-bottom: 10px;
+                line-height: 1.7rem;
+            }
+        }
+    }
+}

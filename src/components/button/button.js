@@ -1,9 +1,9 @@
 import './button.scss';
 
 const BUTTON_TYPE_CLASSES = {
-  google: 'google-sign-in',
-  inverted: 'inverted',
-  login: 'login',
+  red_button: 'red_button',
+  black_button: 'black_button',
+  blue_button: 'blue_button',
 };
 
 const Button = ({ children, buttonType, ...otherProps }) => {

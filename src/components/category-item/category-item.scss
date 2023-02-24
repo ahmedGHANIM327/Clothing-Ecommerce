@@ -8,6 +8,7 @@
     border: 1px solid black;
     margin: 0 7.5px 15px;
     overflow: hidden;
+    width: 40%;
   
     &:hover {
       cursor: pointer;
@@ -20,18 +21,6 @@
       & .category-body-container {
         opacity: 0.9;
       }
-    }
-  
-    &.large {
-      height: 380px;
-    }
-  
-    &:first-child {
-      margin-right: 7.5px;
-    }
-  
-    &:last-child {
-      margin-left: 7.5px;
     }
   
     .background-image {

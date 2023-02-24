@@ -1,5 +1,16 @@
-.categories-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+.categories_preview_container
+{
+    margin: 70px auto;
+    text-align: center;
+
+        h2
+        {
+            font-size: 45px;
+        }
+
+    .categories-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
 }

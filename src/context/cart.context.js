@@ -2,6 +2,7 @@ import { createContext,useState,useEffect } from "react";
 
 const addCartItem = (cartItems,productToAdd) => 
 {
+    console.log(productToAdd)
     const existItem = cartItems.find((item) => item.id===productToAdd.id)
 
     // if cart items contain product we want add
