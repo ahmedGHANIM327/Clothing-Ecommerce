@@ -1,20 +1,31 @@
 import './products_scroll.scss'
 
-import { useContext ,useEffect , useState ,useRef} from 'react';
+// React HOOKS
+import { useContext ,useEffect , useState } from 'react';
 
+// Context
 import { ProductsContext } from '../../context/products.context';
 
+// Components
 import ProductCard from '../product-card/product-card';
+import Button from '../button/button';
+
 // Import Swiper React components
 import { Swiper, SwiperSlide ,useSwiper  } from 'swiper/react';
 import { Autoplay, Pagination, Navigation } from "swiper";
-
-// Import Swiper styles
 import 'swiper/css';
-import Button from '../button/button';
+
+// React Router DOM
+import { useNavigate } from 'react-router-dom';
 
 
 const ProductsScroll = () => {
+
+    let navigate = useNavigate()
+    const handleNavigation = () => {
+        navigate("/shop")
+        window.scrollTo(0, 0)
+    }
 
     /* Slider based on largeur */
     const [largeur,setLargeur] = useState(window.innerWidth);
@@ -76,6 +87,7 @@ const ProductsScroll = () => {
                     </SwiperSlide>
                 })}
             </Swiper>} 
+            <Button onClick={handleNavigation}>All Products</Button>
         </div>
     )
 }

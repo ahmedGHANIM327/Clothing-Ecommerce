@@ -1,19 +1,28 @@
-import { useContext } from 'react';
+// Router DOM
+import { useParams } from 'react-router-dom';
 
-import { CategoriesContext } from '../../context/categories.context';
-import CategoryPreview from '../../components/category-preview/category-preview';
+// Context
+import { ProductsContext } from '../../context/products.context';
+
+// React Hooks
+import { useContext} from 'react';
+
+// Components
+import PageTitle from '../../components/page-title/page-title';
+import ProductsListing from '../../components/products_listing/products-listing';
 
 const CategoriesPreview = () => {
-  const { categoriesMap } = useContext(CategoriesContext);
+  const {category} = useParams();
+
+  // All products
+  const {productsMap} = useContext(ProductsContext)
 
   return (
-    <div className='section-container'>
-      {Object.keys(categoriesMap).map((title) => {
-        const products = categoriesMap[title];
-        return (
-          <CategoryPreview key={title} title={title} products={products} />
-        );
-      })}
+    <div>
+      <PageTitle page_title={category}/>
+      <div className='section-container'>
+        {productsMap && <ProductsListing products={productsMap.filter((item) => item.category === category)}/>}
+      </div>
     </div>
   );
 };

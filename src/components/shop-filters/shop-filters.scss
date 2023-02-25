@@ -1,0 +1,87 @@
+.shop_filters_container
+{
+    padding-right: 45px;
+
+    &>button
+    {
+        width: 100%;
+    }
+
+    &>p
+    {
+        font-size: 18px;
+        font-weight: bold;
+    }
+
+    .categories_filter
+    {
+        &>div>label
+        {
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        span.MuiTypography-root
+        {
+            font-family: "SF Mono","Fira Code","Fira Mono","Roboto Mono",monospace !important;
+            color: var(--black-color);
+        }
+        .Mui-checked {
+            color: var(--blue-color);
+        }
+
+        margin: 30px 0;
+    }
+
+    .price_range_filter
+    {
+        & label
+        {
+            margin-bottom: 15px !important;
+            font-weight: bold;
+        }
+        & span
+        {
+            color: var(--blue-color);
+        }
+        margin: 30px 0;
+    }
+
+}
+
+.mobile_filters_container
+{
+    background: red;
+    width: 100%;
+    position: fixed;
+    z-index: 99999;
+    left: 0;
+    bottom: 0;
+    padding: 15px 10px;
+}
+
+@media screen and (max-width: 800px) {
+    .shop_filters_container
+    {
+        padding-right: 0;
+    }
+    .mobile_filters
+    {
+        background-color: #fff;
+        position: fixed;
+        z-index: 9999;
+        width: 100%;
+        left: 0;
+        bottom: 0;
+        padding: 15px;
+        transition: all 0.8s;
+        transform: translateY(100%);
+        max-height: 60%;
+        overflow-y: auto;
+    }
+
+    .mobile_filters.show_filters
+    {
+        transform: translateY(0);
+    }
+
+}

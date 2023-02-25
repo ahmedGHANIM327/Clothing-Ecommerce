@@ -1,7 +1,13 @@
 import './hero-section.scss'
 import Button from '../button/button';
+import { useNavigate } from 'react-router-dom';
 
 const HeroSection = () => {
+
+    let navigate = useNavigate()
+    const handleNavigation = () => {
+        navigate("/shop")
+    }
 
     return (
         <div className='hero_section_container' 
@@ -13,7 +19,7 @@ const HeroSection = () => {
             <div className='overlay_section'></div>
             <h4>50% sell off for limited time</h4>
             <h1>Great Lookbook 2021</h1>
-            <Button buttonType='black_button'>SHOP NOW</Button>
+            <Button buttonType='black_button' onClick={handleNavigation}>SHOP NOW</Button>
         </div>
     )
 }

@@ -1,16 +1,19 @@
-import {Fragment, useContext } from 'react'
-
+// SCSS Styles
 import './shop.scss'
-import CategoriesPreview from '../categories-preview/categories-preview'
-import Category from '../../components/category-shop/category-shop'
+
+// React Router Tools
 import { Routes,Route } from 'react-router-dom'
+
+// Components
+import ShopPreview from '../shop-preview/shop-preview'
+import CategoriesPreview from '../categories-preview/categories-preview'
 
 export default function Shop() {
 
   return (
     <Routes>
-      <Route index element={<CategoriesPreview />} />
-      <Route path=':category' element={<Category />} />
+      <Route index element={<ShopPreview />} />
+      <Route path=':category' element={<CategoriesPreview />} />
     </Routes>
   )
 }

@@ -14,3 +14,32 @@
         justify-content: space-between;
     }
 }
+
+@media screen and (max-width: 750px) {
+    /*.mySwiper
+    {
+        .swiper-slide {
+            display: flex !important;
+            justify-content: center !important;
+
+            &.swiper-slide-active {
+                display: flex;
+                justify-content: center;
+            }
+        }
+        .swiper-wrapper
+        {
+            display: flex !important;
+            justify-content: center !important;
+        }
+
+    }*/
+    .categories_preview_container
+    {
+        h2
+        {
+            font-size: 1.7rem;
+        }
+    }
+    
+}

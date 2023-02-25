@@ -1,0 +1,26 @@
+.products_listing_container
+{
+    .products_listing
+    {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+        .product-card-container
+        {
+            width: 330px;
+        }
+    
+    }
+}
+
+@media screen and (max-width: 750px) {
+    .products_listing_container
+    {
+        .products_listing
+        {
+            justify-content: center;
+        }
+    }
+
+}
