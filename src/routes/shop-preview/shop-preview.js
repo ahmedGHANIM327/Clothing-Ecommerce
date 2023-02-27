@@ -29,6 +29,14 @@ const ShopPreview = () => {
         //console.log(currentCat);
     };
 
+    // Product Search Filter
+    const [productaNameSearch,setProductNameSearch] = useState("");
+
+    const handleChangeProduct = (event) => {
+        const currentVale = event.target.value;
+        setProductNameSearch(currentVale)
+    }
+
     // Render when changing categorie filter
     useEffect(() => {
         if(categorieValue !== "all")
@@ -40,14 +48,30 @@ const ShopPreview = () => {
         {
             setFilterableProducts(productsMap);
         }
+        //setProductNameSearch('');
     },[categorieValue,productsMap])
+
+    
+    useEffect(() => {
+        let serachValue = productaNameSearch.toLowerCase()
+        if(serachValue !== "")
+        {
+            const newFiltrableProducts = productsMap.filter((item) => item.name.toLowerCase().includes(serachValue));
+            setFilterableProducts(newFiltrableProducts);
+        }
+        else
+        {
+            setFilterableProducts(productsMap);
+        }
+    },[productaNameSearch])
+
 
     return (
         <div className='shop_preview_container'>
             <PageTitle page_title={"Shop"}/>
             <Grid container className='section-container' rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
                 <Grid item md={3} sm={12} xs={12}>
-                    <ShopFilters categorieValue={categorieValue} onChangeCategorie={onChangeCategorie}/>
+                    <ShopFilters categorieValue={categorieValue} onChangeCategorie={onChangeCategorie} handleChangeProduct={handleChangeProduct} productaNameSearch={productaNameSearch}/>
                 </Grid>
                 <Grid item md={9} sm={12} xs={12}>
                     <ProductsListing products={filterableProducts}/>

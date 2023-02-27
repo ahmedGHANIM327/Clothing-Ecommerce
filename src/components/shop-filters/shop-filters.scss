@@ -32,6 +32,25 @@
         margin: 30px 0;
     }
 
+    .search_filter
+    {
+        &>div>label
+        {
+            font-weight: bold;
+        }
+
+        .group
+        {
+            margin:0;
+
+            .form-input
+            {
+                margin-top:0;
+                border: 1px solid grey;
+            }
+        }
+    }
+
     .price_range_filter
     {
         & label

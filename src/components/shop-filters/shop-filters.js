@@ -6,10 +6,10 @@ import RadioGroup from '@mui/material/RadioGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import FormControl from '@mui/material/FormControl';
 import FormLabel from '@mui/material/FormLabel';
-import { Slider } from '@mui/material';
+import FormInput from '../form-input/form-input';
 import Button from '../button/button';
 
-const ShopFilters = ({onChangeCategorie,categorieValue}) => {
+const ShopFilters = ({onChangeCategorie,categorieValue,productaNameSearch,handleChangeProduct}) => {
 
     const [largeur,setLargeur] = useState(window.innerWidth);
 
@@ -56,6 +56,19 @@ const ShopFilters = ({onChangeCategorie,categorieValue}) => {
                         <FormControlLabel value="jackets" control={<Radio />} label="Jackets" />
                         <FormControlLabel value="mens" control={<Radio />} label="Mens" />
                     </RadioGroup>
+                </FormControl>
+            </div>
+
+            <div className='search_filter'>
+                <FormControl>
+                    <FormLabel id="demo-radio-buttons-group-label">Product Name</FormLabel>
+                    <FormInput
+                        type='text'
+                        required
+                        onChange={handleChangeProduct}
+                        name='product_name'
+                        value={productaNameSearch}
+                    />
                 </FormControl>
             </div>
         </div>
