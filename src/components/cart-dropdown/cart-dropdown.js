@@ -28,7 +28,7 @@ const CartDropdown = ({show,showCartAction}) => {
             {cartItems.length === 0 ? <h1>Your basket is empty</h1>:cartItems.map(item => <CartItem key={item.id} cartItem={item}/>)}
         </div>
         <div className='cart-actions'>
-            <span className='cart-total'>Total : {cartTotal}£</span>
+            <span className='cart-total'>Total : ${cartTotal}</span>
             <Button onClick={navigateCheckout}>GO TO CHECKOUT</Button>
         </div>
     </div>);

@@ -1,5 +1,18 @@
-.section-container.signin_container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
+.signin_full_container {
+    
+    .forms_container
+    {
+        margin: 50px auto;
+
+        .MuiGrid-grid-md-6 {
+            display: flex;
+            justify-content: center;
+        }
+
+        .sign-up-container {
+            width: 90%;
+            max-width: 450px;
+            margin-bottom: 70px;
+        }
+    }
 }

@@ -14,6 +14,7 @@
     justify-content: center;
     align-items: center;
     border: 1px solid var(--black-color);
+    transition: all 0.5s;
   
     &:hover {
       background-color: white;
@@ -23,11 +24,12 @@
   
     &.red_button {
       background-color: var(--red-color);
+      border-color: var(--red-color);
       color: white;
   
       &:hover {
-        background-color: var(--red-color);
-        border: none;
+        color: var(--red-color);
+        background-color: white;
       }
     }
   
@@ -44,14 +46,14 @@
     }
 
     &.blue_button {
-      background-color: white;
-      color: var(--blue-color);
+      background-color: var(--blue-color);
+      color: white;
       border: 1px solid var(--blue-color);
   
       &:hover {
-        background-color: var(--blue-color);
-        color: white;
-        border: none;
+        color: var(--blue-color);
+        background-color: white;
+        //border: none;
       }
     }
   }

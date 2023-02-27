@@ -18,7 +18,7 @@ const HeroSection = () => {
         >
             <div className='overlay_section'></div>
             <h4>50% sell off for limited time</h4>
-            <h1>Great Lookbook 2021</h1>
+            <h1>Great Lookbook 2023</h1>
             <Button buttonType='black_button' onClick={handleNavigation}>SHOP NOW</Button>
         </div>
     )
