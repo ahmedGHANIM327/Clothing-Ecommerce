@@ -3,20 +3,24 @@ import './shop-preview.scss'
 import { Grid } from '@mui/material'
 
 // React Hooks
-import { useContext , useEffect, useState } from 'react';
-
-// Contexts
-import { ProductsContext } from '../../context/products.context';
+import {useEffect, useState } from 'react';
 
 // Components
 import PageTitle from '../../components/page-title/page-title'
 import ProductsListing from '../../components/products_listing/products-listing';
 import ShopFilters from '../../components/shop-filters/shop-filters';
 
+// Redux context
+// Redux
+import { useSelector } from 'react-redux';
+
+// User Redux
+import { selectProducts } from '../../store-redux/products/product.selector';
+
 const ShopPreview = () => {
 
     // All products
-    const {productsMap} = useContext(ProductsContext)
+    const productsMap = useSelector(selectProducts)
 
     // Filterable products
     const [filterableProducts,setFilterableProducts] = useState(productsMap);

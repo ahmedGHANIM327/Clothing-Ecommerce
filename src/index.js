@@ -3,23 +3,17 @@ import ReactDOM from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
 import './index.css';
 import App from './App';
-import { UserProvider } from './context/user';
-import { CategoriesProvider } from './context/categories.context';
-import { ProductsProvider } from './context/products.context';
-import { CartProvider } from './context/cart.context';
+
+// Redux
+import { Provider } from 'react-redux';
+import { store } from './store-redux/store';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
+  <Provider store={store}>
     <BrowserRouter>
-      <UserProvider>
-        <CategoriesProvider>
-          <ProductsProvider>
-            <CartProvider>
-              <App />
-            </CartProvider>
-          </ProductsProvider>
-        </CategoriesProvider>
-      </UserProvider>
+        <App />
     </BrowserRouter>
+  </Provider>
 );
 

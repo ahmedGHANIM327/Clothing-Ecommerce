@@ -1,9 +1,10 @@
 import React from 'react';
-import { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import Button from '../button/button';
-import { CartContext } from '../../context/cart.context';
+
+import { useSelector } from 'react-redux';
+import { selectCartItems ,cartTotalPrice} from '../../store-redux/cart/cart.selector';
 
 import CartItem from '../cart-item/cart-item';
 
@@ -18,7 +19,8 @@ const CartDropdown = ({show,showCartAction}) => {
         showCartAction(false);
     }
 
-    const {cartItems,cartTotal} = useContext(CartContext)
+    const cartItems = useSelector(selectCartItems)
+    const cartTotal = useSelector(cartTotalPrice)
 
     const show_carte = show ? "cart-dropdown-container":"cart-dropdown-container hide_cart"
 

@@ -1,22 +1,26 @@
 import './products_scroll.scss'
 
 // React HOOKS
-import { useContext ,useEffect , useState } from 'react';
-
-// Context
-import { ProductsContext } from '../../context/products.context';
+import { useEffect , useState } from 'react';
 
 // Components
 import ProductCard from '../product-card/product-card';
 import Button from '../button/button';
 
 // Import Swiper React components
-import { Swiper, SwiperSlide ,useSwiper  } from 'swiper/react';
+import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Pagination, Navigation } from "swiper";
 import 'swiper/css';
 
 // React Router DOM
 import { useNavigate } from 'react-router-dom';
+
+// Redux context
+// Redux
+import { useSelector } from 'react-redux';
+
+// User Redux
+import { selectProducts } from '../../store-redux/products/product.selector';
 
 
 const ProductsScroll = () => {
@@ -56,7 +60,7 @@ const ProductsScroll = () => {
         }
     }
     /******************************** */
-    const {productsMap} = useContext(ProductsContext)
+    const productsMap = useSelector(selectProducts)
 
     return (
         <div className='section-container products_scroll_container'>

@@ -1,0 +1,3 @@
+export const PRODUCT_ACTION_TYPES = {
+    SET_PRODUCTS_MAP: 'SET_PRODUCTS_MAP',
+};

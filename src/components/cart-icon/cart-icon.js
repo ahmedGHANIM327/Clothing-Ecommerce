@@ -1,12 +1,12 @@
 import './cart-icon.scss'
 import { ReactComponent as ShoppingIcon } from '../../assets/shopping-bag-icon.svg'
 
-import { useContext } from 'react';
-import { CartContext } from '../../context/cart.context';
+import { useSelector } from 'react-redux';
+import { cartCount} from '../../store-redux/cart/cart.selector';
 
 const CartIcon = ({showCartAction}) => {
 
-    const {cartItemCount} = useContext(CartContext)
+    const cartItemCount = useSelector(cartCount)
 
     return (
         <div className='cart-icon-container' onClick={() => showCartAction(true)}>

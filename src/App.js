@@ -7,7 +7,41 @@ import Checkout from './routes/checkout/checkout';
 // Routes
 import { Route,Routes } from 'react-router-dom';
 
+// Redux
+import { useDispatch } from 'react-redux';
+
+// User
+import { useEffect} from "react";
+import { onAuthStateChangedListener ,createUserDocumentFromAuth} from "./utils/firebase/firebase";
+import { setCurrentUser } from './store-redux/user/user.action';
+
+// Products
+import { getProducts } from './utils/firebase/firebase';
+import { setProductsMap } from './store-redux/products/product.action';
+
 const App = () => {
+
+  const dispatch = useDispatch();
+  useEffect(() => {
+    const unsubscribe = onAuthStateChangedListener((user) => {
+      if (user) {
+        createUserDocumentFromAuth(user);
+      }
+      dispatch(setCurrentUser(user));
+    });
+
+    return unsubscribe;
+  }, []);
+
+  useEffect(() => {
+    const getProductsMap = async () => {
+        const productMap = await getProducts();
+        dispatch(setProductsMap(Object.values(productMap)))
+        //console.log(productsMap);
+    }
+    getProductsMap();
+  },[])
+
   return (
     <Routes>
       <Route path='/' element={<Navigation />}>

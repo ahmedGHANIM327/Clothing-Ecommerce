@@ -1,8 +1,7 @@
-import { Fragment ,useContext, useState , useEffect} from 'react';
+import { Fragment ,useState , useEffect} from 'react';
 import { Outlet, Link } from 'react-router-dom';
 
 import { ReactComponent as CrwnLogo } from '../../assets/crown.svg';
-import { UserContext } from '../../context/user';
 
 import { ReactComponent as MenuIcon } from '../../assets/menu-icon.svg'
 
@@ -13,6 +12,12 @@ import PersonIcon from '../../components/person-icon/person-icon';
 import Footer from '../../components/footer/footer';
 
 import './navigation.scss';
+
+// Redux
+import { useSelector } from 'react-redux';
+
+// User Redux
+import { selectCurrentUser } from '../../store-redux/user/user.selector';
 
 const Navigation = () => {
     /***********************************/
@@ -40,7 +45,7 @@ const Navigation = () => {
     /*****************************************************/
 
 
-    const {currentUser} = useContext(UserContext);
+    const currentUser = useSelector(selectCurrentUser);
 
     // Show Cart Status
     const [showCart,setShowCart] = useState(false);
