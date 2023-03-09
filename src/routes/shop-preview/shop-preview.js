@@ -52,7 +52,7 @@ const ShopPreview = () => {
         {
             setFilterableProducts(productsMap);
         }
-        //setProductNameSearch('');
+        setProductNameSearch('');
     },[categorieValue,productsMap])
 
     
@@ -60,7 +60,7 @@ const ShopPreview = () => {
         let serachValue = productaNameSearch.toLowerCase()
         if(serachValue !== "")
         {
-            const newFiltrableProducts = productsMap.filter((item) => item.name.toLowerCase().includes(serachValue));
+            const newFiltrableProducts = filterableProducts.filter((item) => item.name.toLowerCase().includes(serachValue));
             setFilterableProducts(newFiltrableProducts);
         }
         else
