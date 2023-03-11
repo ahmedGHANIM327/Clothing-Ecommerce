@@ -13,11 +13,11 @@ import { useDispatch } from 'react-redux';
 // User
 import { useEffect} from "react";
 import { onAuthStateChangedListener ,createUserDocumentFromAuth} from "./utils/firebase/firebase";
-import { setCurrentUser } from './store-redux/user/user.action';
+import { setCurrentUser } from './store-redux/user/user.reducer';
 
 // Products
 import { getProducts } from './utils/firebase/firebase';
-import { setProductsMap } from './store-redux/products/product.action';
+import { setProductsMap } from './store-redux/products/product.reducer';
 
 const App = () => {
 
@@ -37,7 +37,6 @@ const App = () => {
     const getProductsMap = async () => {
         const productMap = await getProducts();
         dispatch(setProductsMap(Object.values(productMap)))
-        //console.log(productsMap);
     }
     getProductsMap();
   },[])
