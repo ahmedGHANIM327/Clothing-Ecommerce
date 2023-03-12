@@ -1,4 +1,7 @@
 import { addItemToCart,clearItemFromCart,removeItemFromCart } from '../../store-redux/cart/cart.reducer';
+import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
+import AddCircleIcon from '@mui/icons-material/AddCircle';
+import DoDisturbOnIcon from '@mui/icons-material/DoDisturbOn';
 
 import { useDispatch } from 'react-redux';
 
@@ -21,16 +24,16 @@ const CheckoutItem = ({ cartItem }) => {
       <span className='name'> {name} </span>
       <span className='quantity'>
         <div className='arrow' onClick={removeItemHandler}>
-          &#10094;
+          <DoDisturbOnIcon />
         </div>
         <span className='value'>{quantity}</span>
         <div className='arrow' onClick={addItemHandler}>
-          &#10095;
+          <AddCircleIcon />
         </div>
       </span>
-      <span className='price'> {price}</span>
+      <span className='price'> ${price}</span>
       <div className='remove-button' onClick={clearItemHandler}>
-        &#10005;
+        <DeleteForeverIcon />
       </div>
     </div>
   );
