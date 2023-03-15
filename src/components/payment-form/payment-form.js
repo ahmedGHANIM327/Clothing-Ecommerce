@@ -22,8 +22,9 @@ const PaymentForm = () => {
         if (!stripe || !elements) {
           return;
         }
-        setIsProcessingPayment(true);
-        const response = await fetch('/.netlify/functions/create-payment-intent', {
+        // This code need some backend , it's just for test
+        /*setIsProcessingPayment(true);
+        const response = await fetch('./netlify/functions/create-payment-intent', {
           method: 'post',
           headers: {
             'Content-Type': 'application/json',
@@ -52,7 +53,8 @@ const PaymentForm = () => {
           if (paymentResult.paymentIntent.status === 'succeeded') {
             alert('Payment Successful!');
           }
-        }
+        }*/
+        alert("Stripe account is desactivated , this is a just test application");
       };
 
     return (

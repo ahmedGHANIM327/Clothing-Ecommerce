@@ -17,25 +17,31 @@ const CheckoutItem = ({ cartItem }) => {
   const removeItemHandler = () => dispatch(removeItemFromCart(cartItem));
 
   return (
-    <div className='checkout-item-container'>
-      <div className='image-container'>
-        <img src={imageUrl} alt={`${name}`} />
-      </div>
-      <span className='name'> {name} </span>
-      <span className='quantity'>
-        <div className='arrow' onClick={removeItemHandler}>
-          <DoDisturbOnIcon />
+    <>
+      <div className="chekout_item_container">
+        <div className="checkout_left">
+          <div className='checkout_image'>
+            <img src={imageUrl} alt={`${name}`} />
+          </div>
+          <div className="checkout_infos">
+            <h3 className='name'> {name} </h3>
+            <span className='price'> ${price}</span>
+          </div>
         </div>
-        <span className='value'>{quantity}</span>
-        <div className='arrow' onClick={addItemHandler}>
-          <AddCircleIcon />
+        <div className="checkout_right">
+          <div className='arrow' onClick={removeItemHandler}>
+            <DoDisturbOnIcon />
+          </div>
+          <span className='value'>{quantity}</span>
+          <div className='arrow' onClick={addItemHandler}>
+            <AddCircleIcon />
+          </div>
+          <div className='remove-button' onClick={clearItemHandler}>
+            <DeleteForeverIcon />
+          </div>
         </div>
-      </span>
-      <span className='price'> ${price}</span>
-      <div className='remove-button' onClick={clearItemHandler}>
-        <DeleteForeverIcon />
       </div>
-    </div>
+    </>
   );
 };
 
